@@ -10,20 +10,23 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
+
+		<link rel="stylesheet" href="css/skel.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/style-xlarge.css" />
+		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+
+		<script src="js/jquery.js"></script>
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery.poptrox.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/init.js"></script>
-		<noscript>
-			<link rel="stylesheet" href="css/skel.css" />
-			<link rel="stylesheet" href="css/style.css" />
-			<link rel="stylesheet" href="css/style-xlarge.css" />
-		</noscript>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/clipboard.min.js"></script>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
 	<body id="top">
-
 		<!-- Header -->
 			<header id="header">
 				<a href="#" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
@@ -37,7 +40,7 @@
 
 				<!-- One -->
 					<section id="one">
-						<h2>About me</h2>
+						<h2>About Me</h2>
 						<p>
 							I'm currently a first year PhD student at Xiamen University, supervised by Prof. Shaozi Li.<br />
 							I received my master degree in 2020 from Xiamen University, Fujian, China.<br />
@@ -79,18 +82,64 @@
 								<p>F Yang, Z Zhong, Z Luo, S Lian, S Li.</p>
 								<a href="https://arxiv.org/pdf/1811.02074.pdf">Paper</a> /
 								<a href="https://github.com/FlyingRoastDuck/PGPPM">Code</a>/
-								<a href="https://scholar.googleusercontent.com/scholar.bib?q=info:Cj1RpIO3pvoJ:scholar.google.com/&output=citation&scisdr=CgWMm76wEMKPgRZJwRM:AAGBfm0AAAAAX-RM2RNdaqaKATJNqb9tpMHHTDrqDaEm&scisig=AAGBfm0AAAAAX-RM2dOxJ_pt6dOgKTTgpGM0W_oLiL5b&scisf=4&ct=citation&cd=-1&hl=zh-CN">Bibtex</a>
+								<a data-toggle="modal" data-target="#cite"
+								   onclick="send_bib('@article{yang2020leveraging,\n'+
+									'                   title={Leveraging virtual and real person for unsupervised person re-identification},\n'+
+									'  					author={Yang, Fengxiang and Zhong, Zhun and Luo, Zhiming and Lian, Sheng and Li, Shaozi},\n'+
+									' 					journal={IEEE Transactions on Multimedia},\n'+
+									' 					volume    = {22},\n'+
+									'  					number    = {9},\n'+
+									'  					pages    = {2444--2453},\n'+
+									'  					year={2020},\n'+
+									'  					publisher={IEEE}\n'+
+									'				  }')">
+									Bibtex
+								</a>
 							</article>
 							<article class="6u 12u$(xsmall) work-item">
 								<a href="images/fulls/ACT.jpg" class="image fit thumb"><img src="images/thumbs/ACT.jpg" alt="" /></a>
 								<h3>Asymmetric Co-Teaching for Unsupervised Cross-Domain Person Re-Identification (AAAI'20)</h3>
 								<p>F Yang, K Li, Z Zhong, Z Luo, X Sun, H Cheng, X Guo, F Huang, R Ji, S Li.</p>
 								<a href="https://arxiv.org/pdf/1912.01349.pdf">Paper</a> /
-								<a href="https://github.com/FlyingRoastDuck/ACT_AAAI20">Code</a>/
-								<a href="https://scholar.googleusercontent.com/scholar.bib?q=info:M6eO2p7U0V8J:scholar.google.com/&output=citation&scisdr=CgWMm76wEMKPgRZJ6rk:AAGBfm0AAAAAX-RM8rkkupZaN_5qFqMQMF3A3TpqKhkM&scisig=AAGBfm0AAAAAX-RM8spyJ8qEz6dSrqgUx25t-RSSj1j9&scisf=4&ct=citation&cd=-1&hl=zh-CN">Bibtex</a>
+								<a href="https://github.com/FlyingRoastDuck/ACT_AAAI20">Code</a> /
+								<a data-toggle="modal" data-target="#cite"
+								   onclick="send_bib('@inproceedings{yang2020asymmetric,\n'+
+									'title={Asymmetric Co-Teaching for Unsupervised Cross-Domain Person Re-Identification.},\n'+
+									'author={Yang, Fengxiang and Li, Ke and Zhong, Zhun and Luo, Zhiming and Sun, Xing and Cheng, Hao and Guo, Xiaowei and Huang, Feiyue and Ji, Rongrong and Li, Shaozi},\n'+
+									'booktitle={AAAI},\n'+
+									'pages={12597--12604},\n'+
+									'year={2020}\n'+
+									'}')">
+									Bibtex
+								</a>
 							</article>
 						</div>
 					</section>
+
+					<div class="modal fade" id="cite" tabindex="-1" role="dialog"
+								 aria-labelledby="Bibtex" aria-hidden="true" data-keyboard="false">
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+										&times;
+									</button>
+									<h4 class="modal-title" id="Bibtex">
+										Bibtex
+									</h4>
+								</div>
+								<div class="modal-body">
+									<p id="bib_info"> </p>
+								</div>
+								<div class="modal-footer">
+									<button class="btn" data-dismiss="modal" id="copy_bib">
+										Copy
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
 
 
 				<!-- Four -->
@@ -106,7 +155,7 @@
 
 				<!-- Five -->
 					<section id="five">
-						<h2>Get in touch</h2>
+						<h2>Contact Me</h2>
 						<p>Don't hesitate to contact me if you have any questions.</p>
 						<div class="row">
 							<div class="4u$ 12u$(small)">
@@ -133,7 +182,7 @@
 
 				<!-- Six -->
 					<section id="six">
-						<h2>My friends</h2>
+						<h2>My Friends</h2>
 						<a href="http://zhunzhong.site/">Zhun Zhong</a><br>
 						<a href="https://sites.google.com/view/zhimingluo/home">Zhiming Luo</a>
 					</section>
