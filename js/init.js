@@ -6,7 +6,7 @@
 
 function send_bib(text) {
     let obj = document.getElementById("bib_info");
-    obj.innerText = text;
+    obj.innerHTML = text;
 }
 
 
